@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "USERS")
+@Entity(name = "grabdeals_users")
 public class User {
 	
 	@Id
@@ -96,8 +96,4 @@ public class User {
 	public void setVerified(Boolean verified) {
 		this.verified = verified;
 	}
-	
-	
-	
-
 }
