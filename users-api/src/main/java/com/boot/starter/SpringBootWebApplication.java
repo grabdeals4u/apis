@@ -17,8 +17,6 @@ import com.users.dao.UserRepository;
 @EntityScan("com.users")
 public class SpringBootWebApplication {
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(SpringBootWebApplication.class, args);
-		UserRepository rep = context.getBean(UserRepository.class);
-		System.out.println("rep == "+rep);
+		SpringApplication.run(SpringBootWebApplication.class, args);
 	}
 }
