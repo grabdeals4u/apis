@@ -23,6 +23,7 @@ public class UsersController {
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	@ResponseBody
 	public User registerUser(@RequestBody User user) {
+		
 		if (userService.registerUser(user)) {
 			return user;
 		}

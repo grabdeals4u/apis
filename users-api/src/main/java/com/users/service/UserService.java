@@ -16,12 +16,17 @@ public class UserService {
 	
 	/**
 	 * 
+	 * @param user
 	 * @return
 	 */
 	public boolean registerUser(User user) {
 		return userRepository.save(user) != null;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public List<User> findAll(){
 		return userRepository.findAll();
 	}

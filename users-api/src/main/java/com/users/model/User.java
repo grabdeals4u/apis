@@ -9,30 +9,30 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@Column(name = "fname")
 	private String fName;
-	
+
 	@Column(name = "lname")
 	private String lName;
-	
+
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "phone")
 	private String phone;
-	
+
 	@Column(name = "country")
 	private String country;
-	
-	@Column(name = "token", nullable = true)
+
+	@Column(name = "token", nullable = false)
 	private String token;
-	
-	@Column(name = "verified", nullable = true)
+
+	@Column(name = "verified", nullable = false, columnDefinition = "boolean default false")
 	private Boolean verified;
 
 	public Long getId() {
