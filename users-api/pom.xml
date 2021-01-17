@@ -59,6 +59,7 @@
             <groupId>com.google.cloud.tools</groupId>
 	    <artifactId>appengine-maven-plugin</artifactId>
 	    <version>2.2.0</version>
+  	    <deploy.projectId>grabdeals-12345</deploy.projectId>
 	   </plugin>
 	</plugins>
      </build>
