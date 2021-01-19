@@ -1,4 +1,4 @@
-runtime: java11
+runtime: java
 instance_class: F1
 env: flex
 handlers:
