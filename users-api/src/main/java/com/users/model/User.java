@@ -1,10 +1,26 @@
 package com.users.model;
 
+import java.util.List;
+
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.LazyToOne;
+import org.hibernate.annotations.LazyToOneOption;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "users")
@@ -34,6 +50,15 @@ public class User {
 
 	@Column(name = "verified", nullable = false, columnDefinition = "boolean default false")
 	private Boolean verified;
+	
+	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="user_id")
+	private List<UserAddress> userAddress;
+
+	
+	public Boolean getVerified() {
+		return verified;
+	}
 
 	public Long getId() {
 		return id;
@@ -98,4 +123,13 @@ public class User {
 	public void setVerified(Boolean verified) {
 		this.verified = verified;
 	}
+	
+	public List<UserAddress> getUserAddress() {
+		return userAddress;
+	}
+
+	public void setUserAddress(List<UserAddress> userAddress) {
+		this.userAddress = userAddress;
+	}
+
 }
